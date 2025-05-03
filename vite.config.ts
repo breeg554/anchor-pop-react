@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     dts({
       entryRoot: "src",
+      exclude: ["src/utils.ts"],
     }),
   ],
 
@@ -24,6 +25,7 @@ export default defineConfig({
         globals: { react: "React" },
       },
     },
+
     sourcemap: true,
   },
 
