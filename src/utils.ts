@@ -9,6 +9,13 @@ export const evMap = (kind: "hover" | "focus" | "click") =>
     ? (["focusin", "focusout"] as const)
     : (["click", "click"] as const);
 
+const positions = {
+  top: `position-area: top;`,
+  right: `position-area: right;`,
+  bottom: `position-area: bottom;`,
+  left: `position-area: left;`,
+} as const;
+
 export const anchorCss = (
   id: string,
   side: "top" | "right" | "bottom" | "left" | "auto" = "top",
@@ -20,27 +27,32 @@ export const anchorCss = (
             margin: 0;
           `;
 
-  const primary = {
-    top: `center y-self-start`,
-    right: `right`,
-    bottom: `center y-self-end`,
-    left: `left`,
-  } as const;
-
   const first = side === "auto" ? "top" : side;
 
   css += `
-            position-area: ${primary[first]};
-            `;
+   ${positions[first]}
+   position-try-fallbacks: flip-block, flip-inline;
+        `;
 
-  css += `
-              position-try-fallbacks: flip-block, flip-inline;
-              position-try: flip-block, flip-inline;
-            `;
-
-  css += `
-            animation: var(--ap-show, none) .15s ease-out both;
-          `;
+  if (gap) {
+    if (first === "top") {
+      css += `
+                  inset-block-end: calc(anchor(top) + ${gap}px);
+              `;
+    } else if (first === "bottom") {
+      css += `
+                  inset-block-start: calc(anchor(bottom) + ${gap}px);
+              `;
+    } else if (first === "left") {
+      css += `
+                  inset-inline-end: calc(anchor(left) + ${gap}px);
+              `;
+    } else if (first === "right") {
+      css += `
+                  inset-inline-start: calc(anchor(right) + ${gap}px);
+              `;
+    }
+  }
 
   return css.replace(/\s+/g, " ").trim();
 };

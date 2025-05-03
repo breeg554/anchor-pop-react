@@ -4,11 +4,19 @@ import { useAnchorPop } from "../src/index";
 function Example() {
   const { anchorProps, popoverProps, isOpen } = useAnchorPop<HTMLButtonElement, HTMLDivElement>({
     side: "auto",
+    offset: 30,
   });
 
   return (
-    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-      <button {...anchorProps} style={{ width: "100px", height: "100px" }}>
+    <div
+      style={{
+        display: "flex",
+        height: "200vh",
+        width: "300vh",
+        overflow: "auto",
+      }}
+    >
+      <button {...anchorProps} style={{ width: "100px", height: "100px", marginLeft: "200px", marginTop: "200px" }}>
         🗑
       </button>
       <div
@@ -18,10 +26,10 @@ function Example() {
           color: "#fff",
           padding: ".3rem .5rem",
           borderRadius: 4,
-          opacity: isOpen ? 1 : 0,
+          //   opacity: isOpen ? 1 : 0,
           transition: "opacity 150ms",
           width: "fit-content",
-          height: "300px",
+          height: "100px",
           whiteSpace: "nowrap",
         }}
       >

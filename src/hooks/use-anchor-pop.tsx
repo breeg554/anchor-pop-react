@@ -35,7 +35,8 @@ export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts:
 
   useLayoutEffect(() => {
     if (!anchorRef.current || !popRef.current) {
-      throw new Error("Popover anchor or popover element not found");
+      console.warn("anchorRef or popRef is not found");
+      return;
     }
 
     if (disabled) return;
