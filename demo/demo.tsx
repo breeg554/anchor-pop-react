@@ -4,7 +4,6 @@ import { useAnchorPop } from "../src/index";
 function Example() {
   const { anchorProps, popoverProps, isOpen } = useAnchorPop<HTMLButtonElement, HTMLDivElement>({
     side: "auto",
-    offset: 30,
   });
 
   return (
@@ -26,7 +25,7 @@ function Example() {
           color: "#fff",
           padding: ".3rem .5rem",
           borderRadius: 4,
-          //   opacity: isOpen ? 1 : 0,
+          opacity: isOpen ? 1 : 0,
           transition: "opacity 150ms",
           width: "fit-content",
           height: "100px",
