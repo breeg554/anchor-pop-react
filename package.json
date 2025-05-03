@@ -1,10 +1,29 @@
 {
   "name": "anchor-pop-react",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Headless Anchor-Positioning popover hook for React",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "author": "breeg554",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/breeg554/anchor-pop-react"
+  },
+  "bugs": {
+    "url": "https://github.com/breeg554/anchor-pop-react/issues"
+  },
+  "homepage": "https://github.com/breeg554/anchor-pop-react#readme",
+  "source": "src/index.tsx",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -18,7 +37,6 @@
   "peerDependencies": {
     "react": ">=18"
   },
-  "license": "ISC",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
