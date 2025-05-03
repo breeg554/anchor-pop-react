@@ -1,6 +1,6 @@
 # anchor-pop-react 📌
 
-A simple React hook for creating anchor-positioned popovers and tooltips.
+A simple React hook for creating [anchor-positioned](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor) popovers and tooltips.
 
 ## What is it?
 
@@ -19,6 +19,10 @@ A simple React hook for creating anchor-positioned popovers and tooltips.
 ## Demo
 
 Check out the [interactive Storybook demo](https://breeg554.github.io/anchor-pop-react/) to see the hook in action with various configurations.
+
+## Note!
+
+⚡ This package uses the CSS [Anchor Positioning API](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor), which is currently in the experimental stage in most browsers. A fallback positioning system is currenlty NOT included.
 
 ## Installation
 
@@ -86,10 +90,6 @@ useAnchorPop({
 | `trigger`  | `string \| string[]` | `[hover, focus]` | How the popover is triggered. Can be `"hover"`, `"click"`, `"focus"`, or an array combining these.                                                                                                                                   |
 | `id`       | `string`             | auto-generated   | Custom ID for the popover element.                                                                                                                                                                                                   |
 | `disabled` | `boolean`            | `false`          | Whether the popover functionality is disabled.                                                                                                                                                                                       |
-
-## Note!
-
-⚡ This package uses the CSS Anchor Positioning API, which is currently in the experimental stage in most browsers. A fallback positioning system is currenlty NOT included.
 
 ## License
 
