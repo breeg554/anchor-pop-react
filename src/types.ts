@@ -20,4 +20,5 @@ export type UseAnchorPopOptions = {
   trigger?: Trigger | Trigger[];
   id?: string;
   disabled?: boolean;
+  delay?: number;
 };

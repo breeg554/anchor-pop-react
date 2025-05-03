@@ -11,6 +11,7 @@ export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts:
     trigger = ["hover", "focus"],
     id = `--ap-${useId().slice(2)}`,
     disabled = false,
+    delay = 300,
   } = opts;
 
   const anchorRef = useRef<A>(null);
@@ -54,11 +55,21 @@ export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts:
     pop.id = `pop-${id}`;
     pop.style.cssText += anchorCss(id, side, offset);
 
+    let timeout: number | undefined;
+
     const show = () => {
-      pop.showPopover();
-      setOpen(true);
+      if (timeout) clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        pop.showPopover();
+        setOpen(true);
+      }, delay);
+      return () => clearTimeout(timeout);
     };
+
     const hide = () => {
+      if (timeout) clearTimeout(timeout);
+
       pop.hidePopover();
       setOpen(false);
     };
@@ -91,6 +102,7 @@ export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts:
     });
 
     return () => {
+      if (timeout) clearTimeout(timeout);
       toArr(trigger).forEach((kind) => {
         if (!kind) return;
         const [enter, leave] = evMap(kind);

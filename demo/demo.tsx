@@ -27,7 +27,7 @@ function Example() {
           padding: ".3rem .5rem",
           borderRadius: 4,
           opacity: isOpen ? 1 : 0,
-          transition: "opacity 150ms",
+          transition: "opacity 350ms",
           width: "fit-content",
           height: "100px",
           whiteSpace: "nowrap",
