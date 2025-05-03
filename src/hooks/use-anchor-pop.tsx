@@ -1,6 +1,8 @@
-import { useId, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import { UseAnchorPopOptions } from "../types";
 import { anchorCss, evMap, toArr } from "../utils";
+
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts: UseAnchorPopOptions = {}) {
   const {
@@ -33,7 +35,7 @@ export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts:
     }
   };
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (!anchorRef.current || !popRef.current) {
       console.warn("anchorRef or popRef is not found");
       return;
