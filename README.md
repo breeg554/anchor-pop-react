@@ -16,6 +16,10 @@ A simple React hook for creating anchor-positioned popovers and tooltips.
 - 🎨 Zero styling opinions - fully customizable appearance
 - 🖱️ Supports click, hover, and manual triggers
 
+## Demo
+
+Check out the [interactive Storybook demo](https://breeg554.github.io/anchor-pop-react/) to see the hook in action with various configurations.
+
 ## Installation
 
 ### npm

@@ -1,6 +1,6 @@
 {
   "name": "anchor-pop-react",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Headless Anchor-Positioning popover hook for React",
   "private": false,
   "type": "module",
@@ -47,6 +47,7 @@
     "test": "vitest run --coverage",
     "preview": "vite preview",
     "npm-preview": "npm pack --dry-run",
+    "npm-publish": "npm publish --access public",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
