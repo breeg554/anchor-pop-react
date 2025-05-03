@@ -13,6 +13,8 @@ export interface AnchorPopProps {
   id?: string;
   /** Whether the popover functionality is disabled */
   disabled?: boolean;
+  /** Delay in milliseconds before showing the popover */
+  delay?: number;
   /** Text content for the anchor element */
   anchorText?: string;
   /** Text content for the popover */
@@ -26,6 +28,7 @@ export const AnchorPop = ({
   trigger = "hover",
   id,
   disabled = false,
+  delay = 300,
   anchorText = "Hover me",
   popoverText = "I'm a popover!",
 }: AnchorPopProps) => {
@@ -35,6 +38,7 @@ export const AnchorPop = ({
     trigger,
     id,
     disabled,
+    delay,
   });
 
   return (

@@ -34,6 +34,9 @@ const meta = {
       control: "select",
       options: ["hover", "click", "focus", ["hover", "focus"], ["click", "focus"], ["hover", "click"]],
     },
+    delay: {
+      control: { type: "range", min: 0, max: 1000, step: 50 },
+    },
     disabled: {
       control: "boolean",
     },
@@ -54,6 +57,7 @@ export const Default: Story = {
     side: "top",
     offset: 8,
     trigger: "hover",
+    delay: 300,
     disabled: false,
     anchorText: "Hover me",
     popoverText: "Default popover on top with hover trigger",

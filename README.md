@@ -82,6 +82,7 @@ useAnchorPop({
   trigger: "hover",
   id: "my-tooltip",
   disabled: false,
+  delay: 300,
 });
 ```
 
@@ -94,6 +95,7 @@ useAnchorPop({
 | `trigger`  | `string \| string[]` | `[hover, focus]` | How the popover is triggered. Can be `"hover"`, `"click"`, `"focus"`, or an array combining these.                                                                                                                                   |
 | `id`       | `string`             | auto-generated   | Custom ID for the popover element.                                                                                                                                                                                                   |
 | `disabled` | `boolean`            | `false`          | Whether the popover functionality is disabled.                                                                                                                                                                                       |
+| `delay`    | `number`             | `300`            | Delay in milliseconds before showing the popover.                                                                                                                                                                                    |
 
 ## License
 
