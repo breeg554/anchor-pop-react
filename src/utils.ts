@@ -21,22 +21,22 @@ export const anchorCss = (
           `;
 
   const primary = {
-    top: `top center`,
-    right: `center right`,
-    bottom: `bottom center`,
-    left: `center left`,
+    top: `center y-self-start`,
+    right: `right`,
+    bottom: `center y-self-end`,
+    left: `left`,
   } as const;
 
   const first = side === "auto" ? "top" : side;
 
   css += `
             position-area: ${primary[first]};
-          `;
+            `;
 
   css += `
-            position-try-fallbacks: flip-block, flip-inline;
-            position-try: flip-block, flip-inline;
-          `;
+              position-try-fallbacks: flip-block, flip-inline;
+              position-try: flip-block, flip-inline;
+            `;
 
   css += `
             animation: var(--ap-show, none) .15s ease-out both;

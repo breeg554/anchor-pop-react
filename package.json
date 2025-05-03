@@ -24,7 +24,8 @@
     "build": "vite build",
     "type": "tsc --noEmit",
     "test": "vitest run --coverage",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "npm-preview": "npm pack --dry-run"
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.0",

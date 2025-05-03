@@ -3,13 +3,14 @@ import { useAnchorPop } from "../src/index";
 
 function Example() {
   const { anchorProps, popoverProps, isOpen } = useAnchorPop<HTMLButtonElement, HTMLDivElement>({
-    side: "top",
-    trigger: "click",
+    side: "auto",
   });
 
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-      <button {...anchorProps}>🗑</button>
+      <button {...anchorProps} style={{ width: "100px", height: "100px" }}>
+        🗑
+      </button>
       <div
         {...popoverProps}
         style={{
@@ -20,6 +21,7 @@ function Example() {
           opacity: isOpen ? 1 : 0,
           transition: "opacity 150ms",
           width: "fit-content",
+          height: "300px",
           whiteSpace: "nowrap",
         }}
       >
