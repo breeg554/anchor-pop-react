@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     dts({
       entryRoot: "src",
-      exclude: ["src/utils.ts"],
+      exclude: ["src/utils.ts", "**/*.stories.tsx", "**/*.stories.ts", "**/stories/**", "**/storybook/**"],
     }),
   ],
 
