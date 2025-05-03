@@ -20,6 +20,10 @@ A simple React hook for creating [anchor-positioned](https://developer.mozilla.o
 
 Check out the [interactive Storybook demo](https://breeg554.github.io/anchor-pop-react/) to see the hook in action with various configurations.
 
+Try it yourself:
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/use-abchor-pop-jq7yndh9?file=src%2FApp.tsx)
+
 ## Note!
 
 ⚡ This package uses the CSS [Anchor Positioning API](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor), which is currently in the experimental stage in most browsers. A fallback positioning system is currenlty NOT included.
