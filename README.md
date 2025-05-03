@@ -11,7 +11,7 @@ A simple React hook for creating anchor-positioned popovers and tooltips.
 ## Key Features
 
 - 🔮 Uses the CSS Anchor Positioning API for precise positioning
-- 🚫 Works without JavaScript for basic positioning (progressively enhanced)
+- 🎯 Pure CSS positioning without JavaScript calculations for layout
 - 🪝 Provides a simple, intuitive React hook API
 - 🎨 Zero styling opinions - fully customizable appearance
 - 🖱️ Supports click, hover, and manual triggers
@@ -58,6 +58,30 @@ function Tooltip() {
   );
 }
 ```
+
+## Hook API
+
+The `useAnchorPop` hook accepts the following options:
+
+```tsx
+useAnchorPop({
+  side: "bottom",
+  offset: 8,
+  trigger: "hover",
+  id: "my-tooltip",
+  disabled: false,
+});
+```
+
+### Options
+
+| Option     | Type                 | Default          | Description                                                                                                                                                                                                                          |
+| ---------- | -------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `side`     | `string`             | `"top"`          | Positioning side of the popover. Options include: `"top"`, `"top-start"`, `"top-end"`, `"right"`, `"right-start"`, `"right-end"`, `"bottom"`, `"bottom-start"`, `"bottom-end"`, `"left"`, `"left-start"`, `"left-end"`, or `"auto"`. |
+| `offset`   | `number`             | `8`              | Distance in pixels between the anchor and popover.                                                                                                                                                                                   |
+| `trigger`  | `string \| string[]` | `[hover, focus]` | How the popover is triggered. Can be `"hover"`, `"click"`, `"focus"`, or an array combining these.                                                                                                                                   |
+| `id`       | `string`             | auto-generated   | Custom ID for the popover element.                                                                                                                                                                                                   |
+| `disabled` | `boolean`            | `false`          | Whether the popover functionality is disabled.                                                                                                                                                                                       |
 
 ## Note!
 

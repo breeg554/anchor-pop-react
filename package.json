@@ -1,6 +1,6 @@
 {
   "name": "anchor-pop-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Headless Anchor-Positioning popover hook for React",
   "private": false,
   "type": "module",
@@ -32,6 +32,8 @@
     "react",
     "popover",
     "tooltip",
+    "dropdown",
+    "positioning",
     "css-anchor",
     "hook"
   ],

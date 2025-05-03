@@ -18,7 +18,6 @@ export type UseAnchorPopOptions = {
   side?: Side;
   offset?: number;
   trigger?: Trigger | Trigger[];
-  delay?: number;
   id?: string;
   disabled?: boolean;
 };
