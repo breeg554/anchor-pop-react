@@ -26,7 +26,7 @@ Try it yourself:
 
 ## Note!
 
-⚡ This package uses the CSS [Anchor Positioning API](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor), which is currently in the experimental stage in most browsers. A fallback positioning system is currenlty NOT included.
+⚡ This package uses the CSS [Anchor Positioning API](https://developer.mozilla.org/en-US/docs/Web/CSS/anchor), which is currently in the experimental stage in most browsers. A fallback positioning system is included in the package.
 
 ## Installation
 

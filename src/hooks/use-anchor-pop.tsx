@@ -50,10 +50,23 @@ export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts:
     anchor.setAttribute("anchor-name", id);
     anchor.setAttribute("aria-describedby", `pop-${id}`);
     anchor.style.cssText += `anchor-name:${id};`;
-
     pop.popover = "manual";
     pop.id = `pop-${id}`;
-    pop.style.cssText += anchorCss(id, side, offset);
+
+    if (!CSS.supports("top: anchor(--dummy center)")) {
+      import("../fallback").then(({ polyfill }) => {
+        const dispose = polyfill(anchorRef.current!, popRef.current!, {
+          side: side === "auto" ? "top" : side,
+          offset: offset ?? 8,
+        });
+
+        return () => dispose();
+      });
+
+      console.warn("CSS Anchor not supported. using js fallback.");
+    } else {
+      pop.style.cssText += anchorCss(id, side, offset);
+    }
 
     let timeout: number | undefined;
 
@@ -73,11 +86,6 @@ export function useAnchorPop<A extends HTMLElement, P extends HTMLElement>(opts:
       pop.hidePopover();
       setOpen(false);
     };
-
-    if (!CSS.supports("top: anchor(--dummy center)")) {
-      // @ts-ignore
-      import("../fallback").then((m) => m.polyfill(anchor, pop, { side, offset }));
-    }
 
     const toggle = () => {
       setOpen((prev) => {

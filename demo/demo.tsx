@@ -3,7 +3,7 @@ import { useAnchorPop } from "../src/index";
 
 function Example() {
   const { anchorProps, popoverProps, isOpen } = useAnchorPop<HTMLButtonElement, HTMLDivElement>({
-    side: "auto",
+    side: "top",
     trigger: "hover",
   });
 
